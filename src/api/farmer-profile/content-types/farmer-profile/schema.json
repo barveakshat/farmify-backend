@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "farmer_profiles",
+  "info": {
+    "singularName": "farmer-profile",
+    "pluralName": "farmer-profiles",
+    "displayName": "Farmer Profile"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "contact": { "type": "string", "required": true },
+    "location": { "type": "string" },
+    "bio": { "type": "text" },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "farmer_profile"
+    }
+  }
+}
